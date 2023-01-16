@@ -42,13 +42,15 @@ class CurrencyExchange {
             
                 $rate = $this->exchangeRateProvider->getRate($data->currency, ExchangeRateProviderInterface::EUR_CODE);   
                 
-                if ($data->currency != ExchangeRateProviderInterface::EUR_CODE || $rate > 0) {
-                    $amntFixed = $data->amount / $rate;
-                }
+                $amount = $data->amount;
 
-                $commssion = $amntFixed * ($isEu ? 0.01 : 0.02); 
+               if ($rate > 0) {
+                    $amount = $data->amount / $rate;
+               }
+
+               $commssion = $amount * ($isEu ? 0.01 : 0.02); 
         
-                $result[] = round($commssion, 2, PHP_ROUND_HALF_UP);
+               $result[] = round($commssion, 2, PHP_ROUND_HALF_UP);
             } catch (Exception $e) {
                 echo $e->getMessage();
             }
