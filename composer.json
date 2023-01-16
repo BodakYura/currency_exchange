@@ -1,0 +1,18 @@
+{
+    "name": "bodakyura/currency_echange",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bodakyura\\CurrencyExchange\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yuriy Bodak",
+            "email": "bodakyura@gmail.com"
+        }
+    ],
+    "require": {}
+}
