@@ -7,8 +7,6 @@ use Bodakyura\CurrencyExchange\Provider\BinProviderInterface;
 
 class CurrencyExchange {
 
-    
-
     /**
      * @var ExchangeRateProviderInterface
      */
@@ -18,7 +16,7 @@ class CurrencyExchange {
      * @var BinProviderInterface
      */
     private $binProvider;
-
+    
     public function __construct(
         ExchangeRateProviderInterface $exchangeRateProvider,
         BinProviderInterface $binProvider
@@ -102,6 +100,6 @@ class CurrencyExchange {
 
         return false;
     }
-
 }
+
 ?>
